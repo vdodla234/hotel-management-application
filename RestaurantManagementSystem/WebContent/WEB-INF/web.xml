@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>RestaurantManagementSystem</display-name>
+  <!-- <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>home.jsp</welcome-file>
+  </welcome-file-list>
+   -->
+  
+  
+  
+  
+ <welcome-file-list>
+  <welcome-file>home</welcome-file> 
+  </welcome-file-list>
+ <servlet>
+  <servlet-name>HomeController</servlet-name> 
+  <servlet-class>com.restaurant.controller.HomeController</servlet-class> 
+  </servlet>
+ <servlet-mapping>
+  <servlet-name>HomeController</servlet-name> 
+  <url-pattern>/home</url-pattern> 
+  </servlet-mapping>
+ <servlet>
+  <servlet-name>MenuController</servlet-name> 
+  <servlet-class>com.restaurant.controller.MenuController</servlet-class> 
+  </servlet>
+ <servlet-mapping>
+  <servlet-name>MenuController</servlet-name> 
+  <url-pattern>/MenuController</url-pattern> 
+  </servlet-mapping>
+ <servlet>
+  <servlet-name>LoginController</servlet-name> 
+  <servlet-class>com.restaurant.controller.LoginController</servlet-class> 
+  </servlet>
+ <servlet-mapping>
+  <servlet-name>LoginController</servlet-name> 
+  <url-pattern>/login</url-pattern> 
+  <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  
+ <servlet>
+  <servlet-name>JobApplicationController</servlet-name> 
+  <servlet-class>com.restaurant.controller.JobApplicationController</servlet-class> 
+  </servlet>
+ <servlet-mapping>
+  <servlet-name>JobApplicationController</servlet-name> 
+  <url-pattern>/application</url-pattern> 
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>ReservationController</servlet-name> 
+  <servlet-class>com.restaurant.controller.ReservationController</servlet-class> 
+  </servlet>
+ <servlet-mapping>
+  <servlet-name>ReservationController</servlet-name> 
+  <url-pattern>/reservation</url-pattern>
+  <url-pattern>/editreserv</url-pattern>  
+  </servlet-mapping>
+
+<servlet>
+  <servlet-name>EditReservationController</servlet-name> 
+  <servlet-class>com.restaurant.controller.EditReservationController</servlet-class> 
+  </servlet>
+ <servlet-mapping>
+  <servlet-name>EditReservationController</servlet-name> 
+  <url-pattern>/editreservation</url-pattern> 
+  <url-pattern>/editpersonalinfo</url-pattern>
+  <url-pattern>/editmenu</url-pattern>
+  <url-pattern>/editmenucard</url-pattern>
+  <url-pattern>/about</url-pattern>
+  </servlet-mapping>
+    
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>/js/*</url-pattern>
+</servlet-mapping>
+
+<filter>
+	<filter-name>SecurityFilter</filter-name>
+	<filter-class>com.restaurant.filter.SecurityFilter</filter-class>
+</filter>
+ <filter-mapping>
+ 	<filter-name>SecurityFilter</filter-name>
+ 	<url-pattern>/*</url-pattern>
+ </filter-mapping>
+</web-app>
